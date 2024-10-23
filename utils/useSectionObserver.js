@@ -10,6 +10,8 @@ const useSectionObserver = (options = { threshold: 0.6 }) => {
 					const newHash = `#${entry.target.id}`
 					if (window.location.hash !== newHash) {
 						window.history.pushState(null, null, newHash)
+						// Dispatch a custom event for hash changes
+						window.dispatchEvent(new Event('hashchange'))
 					}
 				}
 			})
