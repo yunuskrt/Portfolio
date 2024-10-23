@@ -3,7 +3,7 @@ export const scrollToSection = (id) => {
 	if (element) {
 		element.scrollIntoView({
 			block: 'start',
-			behavior: 'auto',
+			behavior: 'smooth',
 		})
 		window.location.hash = `#${id}`
 	}

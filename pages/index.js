@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '@/components/navbar'
-import useSectionObserver from '@/utils/useSectionObserver'
+import SideNav from '@layout/sidenav'
+import useSectionObserver from '@utils/useSectionObserver'
 
 const Home = () => {
 	useSectionObserver()
@@ -14,7 +14,7 @@ const Home = () => {
 				position: 'relative',
 			}}
 		>
-			<Navbar />
+			<SideNav />
 			<section
 				id='home'
 				style={{
@@ -25,17 +25,6 @@ const Home = () => {
 				}}
 			>
 				Home Section
-			</section>
-			<section
-				id='skills'
-				style={{
-					height: '100vh',
-					display: 'flex',
-					backgroundColor: 'green',
-					scrollSnapAlign: 'center',
-				}}
-			>
-				Skills Section
 			</section>
 			<section
 				id='experience'
@@ -49,6 +38,17 @@ const Home = () => {
 				Experience Section
 			</section>
 			<section
+				id='education'
+				style={{
+					height: '100vh',
+					display: 'flex',
+					backgroundColor: 'purple',
+					scrollSnapAlign: 'center',
+				}}
+			>
+				Education Section
+			</section>
+			<section
 				id='projects'
 				style={{
 					height: '100vh',
@@ -60,15 +60,15 @@ const Home = () => {
 				Projects Section
 			</section>
 			<section
-				id='blog'
+				id='contact'
 				style={{
 					height: '100vh',
 					display: 'flex',
-					backgroundColor: 'purple',
+					backgroundColor: 'green',
 					scrollSnapAlign: 'center',
 				}}
 			>
-				Blog Section
+				Contact Section
 			</section>
 		</div>
 	)

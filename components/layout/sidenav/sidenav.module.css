@@ -1,0 +1,130 @@
+.sidenavContainer{
+    position: fixed;
+    top: 0;
+    right: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.sidenav:hover {
+    transform: translateX(-20px);
+    transition: transform 0.5s ease;    
+}
+.navList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.navList > li {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    
+    &:hover {
+        outline: 0;
+        .navDesc {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .navDesc {
+        position: absolute;
+        background-color: #30305a;
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        white-space: nowrap;
+        width: 6rem;
+        font-size: 1rem;
+        left: calc(100% - 9.5rem);
+        display: flex;
+        justify-content: center;
+        transform-origin: center left;
+        transform: scale(0);
+        opacity: 0;
+        transition: .15s ease;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            background-color: #30305a;
+            right: -5px;
+            top: 50%;
+            transform: translatey(-50%) rotate(45deg);
+            border-radius: 3px;
+        }
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hvrBounceToTop {
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+.hvrBounceToTop:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background-hover);
+    border-radius: 15px;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvrBounceToTop:hover,
+.hvrBounceToTop:focus,
+.hvrBounceToTop:active {
+    color: white;
+}
+
+.hvrBounceToTop:hover:before,
+.hvrBounceToTop:focus:before,
+.hvrBounceToTop:active:before {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.navIcon{
+    font-size: 2rem;
+}
