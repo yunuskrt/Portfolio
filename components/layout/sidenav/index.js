@@ -1,7 +1,7 @@
 import React from 'react'
-import { scrollToSection } from '@utils/helpers'
 import { FaHome, FaProjectDiagram, FaPhoneAlt } from 'react-icons/fa'
 import { MdSchool, MdBusinessCenter } from 'react-icons/md'
+import Link from 'next/link'
 import styles from './sidenav.module.css'
 
 const SideNav = ({ itemBackground = '#30305a' }) => {
@@ -9,8 +9,8 @@ const SideNav = ({ itemBackground = '#30305a' }) => {
 		<div className={styles.sidenavContainer}>
 			<nav className={styles.sidenav}>
 				<ul className={styles.navList}>
-					<li
-						onClick={() => scrollToSection('home')}
+					<Link
+						href='/'
 						className={styles.hvrBounceToTop}
 						style={{
 							'--background-hover': itemBackground,
@@ -18,19 +18,9 @@ const SideNav = ({ itemBackground = '#30305a' }) => {
 					>
 						<FaHome className={styles.navIcon} />
 						<span className={styles.navDesc}>Home</span>
-					</li>
-					<li
-						onClick={() => scrollToSection('experience')}
-						className={styles.hvrBounceToTop}
-						style={{
-							'--background-hover': itemBackground,
-						}}
-					>
-						<MdBusinessCenter className={styles.navIcon} />
-						<span className={styles.navDesc}>Experience</span>
-					</li>
-					<li
-						onClick={() => scrollToSection('education')}
+					</Link>
+					<Link
+						href='/education'
 						className={styles.hvrBounceToTop}
 						style={{
 							'--background-hover': itemBackground,
@@ -38,9 +28,19 @@ const SideNav = ({ itemBackground = '#30305a' }) => {
 					>
 						<MdSchool className={styles.navIcon} />
 						<span className={styles.navDesc}>Education</span>
-					</li>
-					<li
-						onClick={() => scrollToSection('projects')}
+					</Link>
+					<Link
+						href='/experience'
+						className={styles.hvrBounceToTop}
+						style={{
+							'--background-hover': itemBackground,
+						}}
+					>
+						<MdBusinessCenter className={styles.navIcon} />
+						<span className={styles.navDesc}>Experience</span>
+					</Link>
+					<Link
+						href='/projects'
 						className={styles.hvrBounceToTop}
 						style={{
 							'--background-hover': itemBackground,
@@ -48,9 +48,9 @@ const SideNav = ({ itemBackground = '#30305a' }) => {
 					>
 						<FaProjectDiagram className={styles.navIcon} />
 						<span className={styles.navDesc}>Projects</span>
-					</li>
-					<li
-						onClick={() => scrollToSection('contact')}
+					</Link>
+					<Link
+						href='/contact'
 						className={styles.hvrBounceToTop}
 						style={{
 							'--background-hover': itemBackground,
@@ -58,7 +58,7 @@ const SideNav = ({ itemBackground = '#30305a' }) => {
 					>
 						<FaPhoneAlt className={styles.navIcon} />
 						<span className={styles.navDesc}>Contact</span>
-					</li>
+					</Link>
 				</ul>
 			</nav>
 		</div>
