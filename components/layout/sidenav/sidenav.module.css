@@ -5,6 +5,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 .sidenav:hover {
     transform: translateX(-20px);
