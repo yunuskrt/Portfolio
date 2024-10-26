@@ -1,7 +1,20 @@
+.background{
+    height: 100vh;
+    width: 100%;
+}
+
+.leftContainer{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 .contactForm {
     max-width: 420px;
     margin: auto 0;
 }
+
 .contactTitle {
     font-size: 36px;
     font-weight: 500;

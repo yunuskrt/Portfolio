@@ -1,0 +1,28 @@
+.slide {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+}
+.content {
+    width: calc(100% - 150px);
+    display: flex;
+    height: 100%;
+    position: relative;
+    max-height: 90vh;
+    overflow: hidden;
+}
+.left {
+    flex: 2;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}

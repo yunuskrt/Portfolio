@@ -44,16 +44,8 @@ const Contact = () => {
 		}
 	}
 	return (
-		<div ref={vantaRef} style={{ height: '100vh', width: '100%' }}>
-			<div
-				style={{
-					height: '100%',
-					width: '50%',
-					display: 'flex',
-					justifyContent: 'flex-end',
-					alignItems: 'center',
-				}}
-			>
+		<div ref={vantaRef} className={styles.background}>
+			<div className={styles.leftContainer}>
 				<form className={styles.contactForm} onSubmit={handleFormSubmit}>
 					<h1 className={styles.contactTitle}>Contact</h1>
 					<div className='form-group'>

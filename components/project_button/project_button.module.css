@@ -1,0 +1,56 @@
+@-webkit-keyframes hvrIconPulseGrow {
+    to {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+}
+@keyframes hvrIconPulseGrow {
+    to {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+}
+
+.hvrIconPulseGrow {
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    text-decoration: none;
+    border: 1px solid var(--light);
+    color: var(--light);
+    background: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    align-self: flex-start;
+    font-weight: 800;
+
+}
+
+.hvrIconPulseGrow > svg {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvrIconPulseGrow:hover > svg,
+.hvrIconPulseGrow:focus > svg,
+.hvrIconPulseGrow:active > svg {
+    -webkit-animation-name: hvrIconPulseGrow;
+    animation-name: hvrIconPulseGrow;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    color: var(--dark);
+}
+.hvrIconPulseGrow:hover,.hvrIconPulseGrow:focus,.hvrIconPulseGrow:active{
+    border: 1px solid var(--dark);
+    color: var(--dark);
+    cursor: pointer;
+}

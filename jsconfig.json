@@ -3,9 +3,10 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./components/*"],
+      "@layout/*": ["./components/layout/*"],
+      "@models/*": ["./components/models/*"],
       "@pages/*": ["./pages/*"],
       "@utils/*": ["./utils/*"],
-      "@layout/*": ["./components/layout/*"],
     }
   }
 }
