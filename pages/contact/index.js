@@ -25,6 +25,8 @@ const Contact = () => {
 					minWidth: 200.0,
 					scale: 1.0,
 					scaleMobile: 1.0,
+					backgroundColor: 0xdedede,
+					color: 0x2d59c0,
 				})
 			)
 		}
