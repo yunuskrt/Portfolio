@@ -4,6 +4,10 @@ import RINGS from 'vanta/dist/vanta.rings.min'
 import * as THREE from 'three'
 import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import IconButton from '@/components/icon_button'
+import { FaLinkedinIn } from 'react-icons/fa'
+import { FiGithub } from 'react-icons/fi'
+import { SiLeetcode } from 'react-icons/si'
 import styles from './index.module.css'
 
 const Home = () => {
@@ -43,6 +47,17 @@ const Home = () => {
 								<span className={styles.name}>Yunus Kerestecioglu</span>
 							</h1>
 							<p className={styles.codeStyle}>I am a Software Engineer</p>
+							<div className={styles.profileButtons}>
+								<IconButton href='https://www.linkedin.com/in/yunus-kerestecio%C4%9Flu-8b6570249/'>
+									<FaLinkedinIn size={20} />
+								</IconButton>
+								<IconButton href='https://github.com/yunuskrt'>
+									<FiGithub size={20} />
+								</IconButton>
+								<IconButton href='https://leetcode.com/u/ykerestecioglu/'>
+									<SiLeetcode size={20} />
+								</IconButton>
+							</div>
 						</div>
 					</div>
 					<div className={styles.right}>

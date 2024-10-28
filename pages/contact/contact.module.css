@@ -7,14 +7,12 @@
     height: 100%;
     width: 50%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
-.contactForm {
-    max-width: 420px;
-    margin: auto 0;
+.contactForm{
+    width: 60%;
 }
-
 .contactTitle {
     font-size: 36px;
     font-weight: 500;
@@ -23,7 +21,7 @@
 }
 
 .feedbackInput {
-    color: #ffffff;
+    color: #000;
     font-weight: 500;
     font-size: 18px;
     border-radius: 5px;

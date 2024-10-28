@@ -1,0 +1,38 @@
+.background {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 90%;
+    height: 90%;
+    padding: 25px;
+}
+
+.dateContainer .date {
+    position: relative;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    & span {
+        color: #5f7ea4;
+        -webkit-text-stroke: 1px #34557d;
+        z-index: 999;
+        display: block;
+        position: relative;
+
+    }
+}
+.desc {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.2em;
+    color: #34557d;
+    max-width: 80%;
+    margin-left: 10px;
+}

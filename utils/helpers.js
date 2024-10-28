@@ -22,10 +22,16 @@ const showError = (field, errorText) => {
 }
 
 // Function to handle form submission of contact form
-export const submitContactForm = (nameRef, emailRef, commentRef) => {
+export const submitContactForm = (
+	nameRef,
+	emailRef,
+	subjectRef,
+	commentRef
+) => {
 	// Getting trimmed values from input fields
 	const name = nameRef.current.value.trim()
 	const email = emailRef.current.value.trim()
+	const subject = subjectRef.current.value.trim()
 	const comment = commentRef.current.value.trim()
 	// Regular expression pattern for email validation
 	const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
@@ -37,7 +43,6 @@ export const submitContactForm = (nameRef, emailRef, commentRef) => {
 		.querySelectorAll('.error-text')
 		.forEach((errorText) => errorText.remove())
 	// Performing validation checks
-
 	let validForm = true
 	if (name === '') {
 		showError(nameRef, 'Enter your full name')
@@ -45,6 +50,10 @@ export const submitContactForm = (nameRef, emailRef, commentRef) => {
 	}
 	if (!emailPattern.test(email)) {
 		showError(emailRef, 'Enter a valid email address')
+		validForm = false
+	}
+	if (subject === '') {
+		showError(subjectRef, 'Enter the subject of your message')
 		validForm = false
 	}
 	if (comment === '') {
@@ -57,17 +66,19 @@ export const submitContactForm = (nameRef, emailRef, commentRef) => {
 	// if (errorInputs.length > 0) return
 }
 
-export const clearContactForm = (nameRef, emailRef, commentRef) => {
+export const clearContactForm = (nameRef, emailRef, subjectRef, commentRef) => {
 	nameRef.current.value = ''
 	emailRef.current.value = ''
+	subjectRef.current.value = ''
 	commentRef.current.value = ''
 }
 
-export const sendMail = async (nameRef, emailRef, commentRef) => {
+export const sendMail = async (nameRef, emailRef, subjectRef, commentRef) => {
 	// Getting trimmed values from input fields
 	const name = nameRef.current.value.trim()
 	const email = emailRef.current.value.trim()
+	const subject = subjectRef.current.value.trim()
 	const comment = commentRef.current.value.trim()
 	// Sending email to the server
-	console.log({ name, email, comment })
+	console.log({ name, email, subject, comment })
 }

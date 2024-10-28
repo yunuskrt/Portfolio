@@ -11,7 +11,8 @@ form .form-group {
   position: relative;
 }
 form input.error,
-form select.error {
+form select.error,
+form textarea.error {
   border-color: #f91919;
   background: #f9f0f1;
 }

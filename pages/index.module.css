@@ -60,6 +60,11 @@
     border: 1px solid #e0e0e0;
 }
 
+.profileButtons{
+    display: flex;
+    gap: 15px;
+}
+
 .right {
     flex: 1;
     display: flex;

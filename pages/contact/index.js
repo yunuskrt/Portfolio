@@ -10,6 +10,7 @@ const Contact = () => {
 
 	const nameRef = useRef(null)
 	const emailRef = useRef(null)
+	const subjectRef = useRef(null)
 	const commentRef = useRef(null)
 
 	useEffect(() => {
@@ -37,10 +38,15 @@ const Contact = () => {
 
 	const handleFormSubmit = (e) => {
 		e.preventDefault()
-		const validForm = submitContactForm(nameRef, emailRef, commentRef)
+		const validForm = submitContactForm(
+			nameRef,
+			emailRef,
+			subjectRef,
+			commentRef
+		)
 		if (validForm) {
-			sendMail(nameRef, emailRef, commentRef)
-			clearContactForm(nameRef, emailRef, commentRef)
+			sendMail(nameRef, emailRef, subjectRef, commentRef)
+			clearContactForm(nameRef, emailRef, subjectRef, commentRef)
 		} else {
 			console.log('form is not valid')
 		}
@@ -57,6 +63,7 @@ const Contact = () => {
 							className={styles.feedbackInput}
 							placeholder='Name'
 							ref={nameRef}
+							autoComplete='off'
 						/>
 					</div>
 					<div className='form-group'>
@@ -66,6 +73,17 @@ const Contact = () => {
 							className={styles.feedbackInput}
 							placeholder='Email'
 							ref={emailRef}
+							autoComplete='off'
+						/>
+					</div>
+					<div className='form-group'>
+						<input
+							name='subject'
+							type='text'
+							className={styles.feedbackInput}
+							placeholder='Subject'
+							ref={subjectRef}
+							autoComplete='off'
 						/>
 					</div>
 					<div className='form-group'>
@@ -74,14 +92,12 @@ const Contact = () => {
 							id='comment'
 							className={styles.feedbackInput}
 							placeholder='Comment'
+							rows={3}
 							ref={commentRef}
+							autoComplete='off'
 						></textarea>
 					</div>
-					<input
-						type='submit'
-						value='SUBMIT'
-						className={styles.submitFormBtn}
-					/>
+					<input type='submit' value='SEND' className={styles.submitFormBtn} />
 				</form>
 			</div>
 		</div>
