@@ -1,10 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import NET from 'vanta/dist/vanta.net.min'
 import * as THREE from 'three'
-import styles from './experience_slide.module.css'
 import ProjectButton from '@/components/project_button'
+import styles from './experience_slide.module.css'
 
-const ExperienceSlide = () => {
+const ExperienceSlide = ({
+	name,
+	path,
+	date,
+	desc,
+	src,
+	href,
+	lightColor,
+	darkColor,
+}) => {
 	const [vantaEffect, setVantaEffect] = useState(0)
 	const vantaRef = useRef(null)
 
@@ -21,8 +31,8 @@ const ExperienceSlide = () => {
 					minWidth: 200.0,
 					scale: 1.0,
 					scaleMobile: 1.0,
-					color: 0x333e54,
-					backgroundColor: 0x8eadec,
+					color: 0x828282,
+					backgroundColor: 0xdedede,
 					points: 17.0,
 					maxDistance: 15.0,
 					spacing: 14.0,
@@ -35,52 +45,52 @@ const ExperienceSlide = () => {
 	}, [vantaEffect])
 
 	return (
-		<div ref={vantaRef} className={styles.background}>
+		<div
+			ref={vantaRef}
+			className={styles.slide}
+			style={{ '--light': lightColor, '--dark': darkColor }}
+		>
 			<div className={styles.content}>
-				<div
-					style={{
-						height: '80px',
-					}}
-				>
-					<img
-						src='/sabancidx.svg'
-						alt='SabanciDx Logo'
-						style={{
-							height: '100%',
-							objectFit: 'cover',
-						}}
+				<div className={styles.left}>
+					<div>
+						<div className={styles.iconContainer}>
+							<img src={path} alt={name} className={styles.icon} />
+						</div>
+						<div className={styles.dateContainer}>
+							<div className={styles.date}>
+								<span>{date}</span>
+							</div>
+						</div>
+					</div>
+					<ul>
+						{desc
+							.replace(/\\n/g, '\n')
+							.split(/\r?\n/)
+							.map((line, index) => (
+								<li key={index} className={styles.desc}>
+									{line}
+								</li>
+							))}
+					</ul>
+					<ProjectButton
+						id='globe'
+						text='Visit Website'
+						href={href}
+						lightColor={lightColor}
+						darkColor={darkColor}
 					/>
 				</div>
-				<div className={styles.dateContainer}>
-					<div className={styles.date}>
-						<span>June 2020 - August 2020</span>
-					</div>
+				<div className={styles.right}>
+					<Image
+						className={styles.image}
+						src={src}
+						alt={name}
+						width={400}
+						height={400}
+					/>
 				</div>
-				<div>
-					<p className={styles.desc}>
-						• Collaborated on a software project for a well-known Turkish energy
-						company facilitating real-time tracking of their vehicle fleet
-						status during service operations.
-					</p>
-					<p className={styles.desc}>
-						• Implemented CRUD operations for the project’s API using .NET
-					</p>
-					<p className={styles.desc}>
-						• Designed the user interface with Figma.
-					</p>
-				</div>
-				<ProjectButton
-					id='globe'
-					text='Visit Website'
-					href='https://sabancidx.com'
-					lightColor='#34557d'
-					darkColor='#1a2a3d'
-				/>
 			</div>
 		</div>
 	)
 }
 export default ExperienceSlide
-
-// dark color - #1a2a3d
-// light color - #34557d
