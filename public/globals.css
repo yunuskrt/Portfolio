@@ -23,3 +23,7 @@ form small {
   display: block;
   color: #f91919;
 }
+
+img {
+  -webkit-user-drag: none;
+}

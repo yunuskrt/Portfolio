@@ -39,7 +39,7 @@ const Projects = () => {
 				identifier: '01',
 				title: 'DIPLOMATIC INTERACTIONS',
 				description:
-					'Frontend application that visualizes the data of interactions among countries built with NextJS. It offers many dynamic visualization types such as tables, networks, cartography, bar chart.',
+					'Frontend application that visualizes the data of interactions among countries built with NextJS.\nOffers many dynamic visualization types such as tables, networks, cartography, bar chart.',
 				buttons: [
 					{
 						id: 'eye',
@@ -54,7 +54,7 @@ const Projects = () => {
 						href: 'https://github.com/yunuskrt/DiplomaticInteractions',
 					},
 				],
-				lightColor: '#a8a098',
+				lightColor: '#96897b',
 				darkColor: '#534c44',
 			},
 		},
@@ -67,7 +67,7 @@ const Projects = () => {
 				identifier: '02',
 				title: 'LINEUP',
 				description:
-					'Soccer squad guessing game using Flutter. Web scraper and ETL pipeline that fetches match, player, team, and manager data from Transfermarkt, processes it, and stores it in MongoDB. REST API for a squad guessing game, managing soccer data with MongoDB.',
+					'Soccer squad guessing game using Flutter.\nWeb scraper and ETL pipeline that fetches match, player, team, and manager data from Transfermarkt, processes it, and stores it in MongoDB.\nREST API for a squad guessing game, managing soccer data with MongoDB.',
 				buttons: [
 					{
 						id: 'eye',
@@ -78,11 +78,26 @@ const Projects = () => {
 					{
 						id: 'github',
 						text: 'Github',
+						detailText: '(Mobile)',
 						external: true,
 						href: 'https://github.com/yunuskrt/LineupApp',
 					},
+					{
+						id: 'github',
+						text: 'Github',
+						detailText: '(Backend)',
+						external: true,
+						href: 'https://github.com/yunuskrt/LineupAPI',
+					},
+					{
+						id: 'github',
+						text: 'Github',
+						detailText: '(Web Scraper)',
+						external: true,
+						href: 'https://github.com/yunuskrt/LineupScraper',
+					},
 				],
-				lightColor: '#7dba8a',
+				lightColor: '#6c8070',
 				darkColor: '#343d36',
 			},
 		},
@@ -95,7 +110,7 @@ const Projects = () => {
 				identifier: '03',
 				title: 'EMPLOYEE MANAGEMENT DASHBOARD',
 				description:
-					'Full stack dashboard web app. Used semantic Ui,HTML, CSS, jQuery for the front-end, MySQL database and PHP backend.',
+					'Full stack dashboard web app.\nUsed Semantic UI, HTML, CSS, jQuery for the front-end, MySQL database and PHP backend.',
 				buttons: [
 					{
 						id: 'eye',
@@ -123,7 +138,7 @@ const Projects = () => {
 				identifier: '04',
 				title: 'BIRTHDAY TRACKER',
 				description:
-					'A web application to track the birthdays of your friends. Built with NestJs and NextJs.',
+					'A web application to track the birthdays of your friends.\nBuilt with NestJS and NextJS.',
 				buttons: [
 					{
 						id: 'eye',
@@ -138,7 +153,7 @@ const Projects = () => {
 						href: 'https://github.com/yunuskrt/BirthdayTracker',
 					},
 				],
-				lightColor: '#1e447d',
+				lightColor: '#2d61ad',
 				darkColor: '#11284a',
 			},
 		},

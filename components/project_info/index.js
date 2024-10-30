@@ -19,7 +19,16 @@ const ProjectInfo = ({
 				<span className={styles.projectIdentifier}>{identifier}.</span>
 				<h1 className={styles.projectTitle}>{title}</h1>
 			</div>
-			<div className={styles.projectDesc}>{description}</div>
+			<ul className={styles.projectInfoList}>
+				{description
+					.replace(/\\n/g, '\n')
+					.split(/\r?\n/)
+					.map((line, index) => (
+						<li key={index} className={styles.projectDesc}>
+							{line}
+						</li>
+					))}
+			</ul>
 			<div className={styles.projectButtons}>
 				{buttons.map((btn) => {
 					return (
@@ -27,6 +36,7 @@ const ProjectInfo = ({
 							key={btn.id}
 							id={btn.id}
 							text={btn.text}
+							detailText={btn.detailText}
 							external={btn.external}
 							href={btn.href}
 							lightColor={lightColor}

@@ -46,7 +46,10 @@ const Home = () => {
 								Hi there, I'm
 								<span className={styles.name}>Yunus Kerestecioglu</span>
 							</h1>
-							<p className={styles.codeStyle}>I am a Software Engineer</p>
+							<div className={styles.codeContainer}>
+								<span className={styles.lineNumber}>1</span>
+								<p className={styles.codeStyle}>I am a Software Engineer</p>
+							</div>
 							<div className={styles.profileButtons}>
 								<IconButton href='https://www.linkedin.com/in/yunus-kerestecio%C4%9Flu-8b6570249/'>
 									<FaLinkedinIn size={20} />

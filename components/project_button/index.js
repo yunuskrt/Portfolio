@@ -6,6 +6,7 @@ import styles from './project_button.module.css'
 const ProjectButton = ({
 	id,
 	text,
+	detailText = '',
 	external = true,
 	href,
 	lightColor,
@@ -18,7 +19,13 @@ const ProjectButton = ({
 			target='_blank'
 			style={{ '--light': lightColor, '--dark': darkColor }}
 		>
-			{text} <Icon name={id} />
+			<div className={styles.content}>
+				<span>{text}</span>
+				{detailText != '' && (
+					<span className={styles.detailText}>{detailText}</span>
+				)}
+			</div>
+			<Icon name={id} />
 		</a>
 	) : (
 		<Link
@@ -26,7 +33,13 @@ const ProjectButton = ({
 			className={styles.hvrIconPulseGrow}
 			style={{ '--light': lightColor, '--dark': darkColor }}
 		>
-			{text} <Icon name={id} />
+			<div className={styles.content}>
+				<span>{text}</span>
+				{detailText != '' && (
+					<span className={styles.detailText}>(Backend)</span>
+				)}
+			</div>
+			<Icon name={id} />
 		</Link>
 	)
 }

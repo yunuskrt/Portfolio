@@ -15,26 +15,29 @@
     padding: 20px;
 
 }
+
 .left {
-    flex: 3;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     padding-top: 2px;
 }
-.iconContainer{
+
+.iconContainer {
     height: 75px;
 }
-.icon{
+
+.icon {
     height: 100%;
     object-fit: cover;
 }
+
 .dateContainer .date {
     position: relative;
     font-size: 20px;
     font-weight: 900;
     margin-top: 10px;
-    margin-left: 10px;
 
     & span {
         color: var(--dark);
@@ -44,14 +47,25 @@
         position: relative;
     }
 }
-.desc {
-    font-size: 16px;
-    font-weight: 700;
-    margin-top: 10px;
-    line-height: 2.5em;
-    color: var(--light);
-    max-width: 80%;
-    margin-left: 10px;
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info{
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & span {
+        font-weight: 400;
+        font-size: 16px;
+    }
 }
 
 @keyframes animate {
@@ -61,13 +75,13 @@
 }
 
 .right {
-    flex: 2;
+    flex: 1;
     position: relative;
 }
 
 .image {
-    width: 480px;
-    height: 360px;
+    width: 600px;
+    height: 450px;
     object-fit: contain;
     position: absolute;
     top: 0;
