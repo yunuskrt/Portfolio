@@ -17,7 +17,7 @@ const VerticalSlider = ({ autoPlay = true, children }) => {
 		verticalSwiping: true,
 		centerMode: false,
 		autoplay: autoPlay,
-		speed: 2000,
+		speed: 1000,
 		autoplaySpeed: 15000,
 		// beforeChange: (currentSlide, nextSlide) => {
 		// 	console.log('before change', currentSlide, nextSlide)

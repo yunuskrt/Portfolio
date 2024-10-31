@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import GLOBE from 'vanta/dist/vanta.globe.min'
 import * as THREE from 'three'
-import { sendMail, submitContactForm, clearContactForm } from '@/utils/helpers'
+import { sendMail, submitContactForm, clearContactForm } from '@utils/helpers'
 import styles from './contact.module.css'
 
 const Contact = () => {

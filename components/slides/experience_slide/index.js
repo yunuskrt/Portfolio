@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import ProjectButton from '@/components/project_button'
+import ProjectButton from '@components/project_button'
 import styles from './experience_slide.module.css'
 
 const ExperienceSlide = ({

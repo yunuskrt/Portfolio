@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import ProjectButton from '@/components/project_button'
+import ProjectButton from '@components/project_button'
 import { TbCertificate } from 'react-icons/tb'
 import { FaBook, FaUniversity, FaGraduationCap } from 'react-icons/fa'
 import styles from './education_slide.module.css'

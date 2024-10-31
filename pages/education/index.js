@@ -1,6 +1,6 @@
 import React from 'react'
 import VerticalSlider from '@layout/vertical_slider'
-import EducationSlide from '@components/education_slide'
+import EducationSlide from '@slides/education_slide'
 const Education = () => {
 	const educationData = [
 		{

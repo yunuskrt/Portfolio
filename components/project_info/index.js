@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectButton from '@/components/project_button'
+import ProjectButton from '@components/project_button'
 import styles from './project-info.module.css'
 
 const ProjectInfo = ({

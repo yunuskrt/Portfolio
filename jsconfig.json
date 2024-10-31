@@ -6,6 +6,7 @@
       "@layout/*": ["./components/layout/*"],
       "@models/*": ["./components/models/*"],
       "@pages/*": ["./pages/*"],
+      "@slides/*": ["./components/slides/*"],
       "@utils/*": ["./utils/*"],
     }
   }

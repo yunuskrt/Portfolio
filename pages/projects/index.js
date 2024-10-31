@@ -1,6 +1,6 @@
 import React from 'react'
 import VerticalSlider from '@layout/vertical_slider'
-import ProjectSlide from '@components/project_slide'
+import ProjectSlide from '@slides/project_slide'
 
 const Swiper = () => {
 	const projectsData = [

@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '@/utils/icon'
+import Icon from '@utils/icon'
 import Link from 'next/link'
 import styles from './project_button.module.css'
 

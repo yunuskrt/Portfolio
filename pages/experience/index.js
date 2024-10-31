@@ -1,6 +1,6 @@
 import React from 'react'
 import VerticalSlider from '@layout/vertical_slider'
-import ExperienceSlide from '@/components/experience_slide'
+import ExperienceSlide from '@slides/experience_slide'
 
 const Experience = () => {
 	const experienceData = [
