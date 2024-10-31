@@ -1,6 +1,0 @@
-.slide {
-    height: 30vh;
-    display: flex;
-    background: linear-gradient(0deg, var(--bgColor1) 0%, var(--bgColor2) 100%);
-    scroll-snap-align: center;
-}

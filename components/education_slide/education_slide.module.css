@@ -48,13 +48,13 @@
     }
 }
 
-.infoContainer{
+.infoContainer {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.info{
+.info {
     font-size: 26px;
     font-weight: 600;
     color: var(--dark);

@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import NET from 'vanta/dist/vanta.net.min'
-import * as THREE from 'three'
 import ProjectButton from '@/components/project_button'
 import { TbCertificate } from 'react-icons/tb'
 import { FaBook, FaUniversity, FaGraduationCap } from 'react-icons/fa'
@@ -19,38 +17,8 @@ const EducationSlide = ({
 	lightColor,
 	darkColor,
 }) => {
-	const [vantaEffect, setVantaEffect] = useState(0)
-	const vantaRef = useRef(null)
-
-	useEffect(() => {
-		if (!vantaEffect) {
-			setVantaEffect(
-				NET({
-					el: vantaRef.current,
-					THREE: THREE,
-					mouseControls: true,
-					touchControls: true,
-					gyroControls: false,
-					minHeight: 200.0,
-					minWidth: 200.0,
-					scale: 1.0,
-					scaleMobile: 1.0,
-					color: 0x828282,
-					backgroundColor: 0xdedede,
-					points: 17.0,
-					maxDistance: 15.0,
-					spacing: 14.0,
-				})
-			)
-		}
-		return () => {
-			if (vantaEffect) vantaEffect.destroy()
-		}
-	}, [vantaEffect])
-
 	return (
 		<div
-			ref={vantaRef}
 			className={styles.slide}
 			style={{ '--light': lightColor, '--dark': darkColor }}
 		>
