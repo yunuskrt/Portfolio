@@ -20,7 +20,7 @@
 
 .navDesc {
     position: absolute;
-    background-color: #30305a;
+    background-color: #a39c89;
     padding: .5rem 1rem;
     border-radius: 5px;
     white-space: nowrap;
@@ -40,7 +40,8 @@
         width: 12px;
         height: 12px;
         position: absolute;
-        background-color: #30305a;
+        
+        background-color: #a39c89;
         right: -5px;
         top: 50%;
         transform: translatey(-50%) rotate(45deg);
@@ -67,7 +68,7 @@
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
 
-    color: #000;
+    color: #403d37;
     text-decoration: none;
     display: flex;
     align-items: center;

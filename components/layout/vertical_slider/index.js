@@ -4,7 +4,39 @@ import * as THREE from 'three'
 import Slider from 'react-slick'
 import styles from './vertical_slider.module.css'
 
-const VerticalSlider = ({ autoPlay = true, children }) => {
+const VerticalSlider = ({ id = '', autoPlay = true, children }) => {
+	const [slideIndex, setSlideIndex] = useState(0)
+	const colors = {
+		color:
+			id === 'projects'
+				? slideIndex === 0
+					? '#534c44'
+					: slideIndex === 1
+					? '#343d36'
+					: slideIndex === 2
+					? '#4a2e42'
+					: slideIndex === 3
+					? '#11284a'
+					: slideIndex === 4
+					? '#3d3228'
+					: '#706f6f'
+				: '#706f6f',
+		activeColor:
+			id === 'projects'
+				? slideIndex === 0
+					? '#96897b'
+					: slideIndex === 1
+					? '#6c8070'
+					: slideIndex === 2
+					? '#8f6b84'
+					: slideIndex === 3
+					? '#2d61ad'
+					: slideIndex === 4
+					? '#87715f'
+					: '#a39c89'
+				: '#a39c89',
+	}
+
 	const settings = {
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -19,44 +51,36 @@ const VerticalSlider = ({ autoPlay = true, children }) => {
 		autoplay: autoPlay,
 		speed: 1000,
 		autoplaySpeed: 15000,
-		// beforeChange: (currentSlide, nextSlide) => {
-		// 	console.log('before change', currentSlide, nextSlide)
-		// },
-		// afterChange: function (index) {
-		// 	console.log(
-		// 		`Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-		// 	)
-		// },
+		afterChange: function (index) {
+			setSlideIndex(index)
+		},
 		appendDots: (dots) => (
 			<div
 				style={{
-					width: '50px',
-					position: 'absolute',
-					height: '100%',
-					top: '0',
-					left: '0',
-					display: 'flex',
-					alignItems: 'center',
+					'--slick-dot-bg': colors.color,
+					'--slick-dot-bg-active': colors.activeColor,
 				}}
 			>
-				<ul
-					style={{
-						display: 'flex',
-						flexDirection: 'column',
-						gap: '20px',
-						fontSize: '30px',
-					}}
-				>
-					{' '}
-					{dots}{' '}
-				</ul>
+				<ul className={styles.dotList}> {dots} </ul>
 			</div>
 		),
-		customPaging: (i) => <div className='slick-dot'></div>,
+		customPaging: (i) => <div className={styles.slickDot}></div>,
 	}
+
+	const sliderRef = useRef(null)
+	const next = () => {
+		if (sliderRef.current) {
+			sliderRef.current.slickNext()
+		}
+	}
+	const previous = () => {
+		if (sliderRef.current) {
+			sliderRef.current.slickPrev()
+		}
+	}
+
 	const [vantaEffect, setVantaEffect] = useState(0)
 	const vantaRef = useRef(null)
-
 	useEffect(() => {
 		if (!vantaEffect) {
 			setVantaEffect(
@@ -83,9 +107,34 @@ const VerticalSlider = ({ autoPlay = true, children }) => {
 		}
 	}, [vantaEffect])
 
+	const debounceTimeout = useRef(null)
+	useEffect(() => {
+		const handleWheel = (event) => {
+			if (Math.abs(event.deltaY) >= 100) {
+				clearTimeout(debounceTimeout.current)
+				debounceTimeout.current = setTimeout(() => {
+					if (event.deltaY > 0) {
+						next()
+					} else {
+						previous()
+					}
+				}, 40)
+			}
+		}
+
+		window.addEventListener('wheel', handleWheel)
+
+		return () => {
+			window.removeEventListener('wheel', handleWheel)
+			clearTimeout(debounceTimeout.current)
+		}
+	}, [])
+
 	return (
 		<div className={styles.background} ref={vantaRef}>
-			<Slider {...settings}>{children}</Slider>
+			<Slider ref={sliderRef} {...settings}>
+				{children}
+			</Slider>
 		</div>
 	)
 }

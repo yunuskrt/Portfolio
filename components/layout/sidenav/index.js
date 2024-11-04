@@ -4,7 +4,7 @@ import { MdSchool, MdBusinessCenter } from 'react-icons/md'
 import Link from 'next/link'
 import styles from './sidenav.module.css'
 
-const SideNav = ({ itemBackground = '#30305a' }) => {
+const SideNav = ({ itemBackground = '#a39c89' }) => {
 	return (
 		<div className={styles.sidenavContainer}>
 			<nav className={styles.sidenav}>
