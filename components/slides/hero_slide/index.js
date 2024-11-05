@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { TypeAnimation } from 'react-type-animation'
 import Image from 'next/image'
 import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
@@ -20,9 +22,26 @@ const HeroSlide = () => {
 						</h1>
 						<div className={styles.codeContainer}>
 							<span className={styles.lineNumber}>1</span>
-							<p className={styles.codeStyle}>I am a Software Engineer</p>
+							<TypeAnimation
+								sequence={['I am a Software Engineer']}
+								wrapper='p'
+								cursor={true}
+								repeat={1}
+							/>
 						</div>
-						<div className={styles.profileButtons}>
+						<motion.div
+							animate={{
+								y: 15,
+								x: 25,
+								scale: 1.1,
+								transition: {
+									yoyo: Infinity,
+									duration: 5,
+									ease: 'backInOut',
+								},
+							}}
+							className={styles.profileButtons}
+						>
 							<IconButton href='https://www.linkedin.com/in/yunus-kerestecio%C4%9Flu-8b6570249/'>
 								<FaLinkedinIn size={20} />
 							</IconButton>
@@ -32,7 +51,7 @@ const HeroSlide = () => {
 							<IconButton href='https://leetcode.com/u/ykerestecioglu/'>
 								<SiLeetcode size={20} />
 							</IconButton>
-						</div>
+						</motion.div>
 					</div>
 				</div>
 				<div className={styles.right}>
@@ -49,14 +68,21 @@ const HeroSlide = () => {
 							/>
 						</Sphere>
 					</Canvas>
-					<div className={styles.nonagonImage}>
-						<Image
-							src='/profile-photo.jpeg'
-							alt='Profile Photo'
-							width={400}
-							height={400}
-						/>
-					</div>
+					<motion.div
+						className={styles.nonagonBorder}
+						animate={{
+							scale: 1.3,
+						}}
+					>
+						<div className={styles.nonagonImage}>
+							<Image
+								src='/profile-photo.jpeg'
+								alt='Profile Photo'
+								width={400}
+								height={400}
+							/>
+						</div>
+					</motion.div>
 				</div>
 			</div>
 		</div>
