@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function CakeModel(props) {
-	const { nodes, materials } = useGLTF('/cake-transformed.glb')
+	const { nodes, materials } = useGLTF('/models/cake-transformed.glb')
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -52,4 +52,4 @@ export default function CakeModel(props) {
 	)
 }
 
-useGLTF.preload('/cake-transformed.glb')
+useGLTF.preload('/models/cake-transformed.glb')

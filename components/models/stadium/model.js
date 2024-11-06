@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function StadiumModel(props) {
-	const { nodes, materials } = useGLTF('/stadium-transformed.glb')
+	const { nodes, materials } = useGLTF('/models/stadium-transformed.glb')
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -24,4 +24,4 @@ export default function StadiumModel(props) {
 	)
 }
 
-useGLTF.preload('/stadium-transformed.glb')
+useGLTF.preload('/models/stadium-transformed.glb')

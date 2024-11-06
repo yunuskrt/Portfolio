@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function SettingsModel(props) {
-	const { nodes, materials } = useGLTF('/settings-transformed.glb')
+	const { nodes, materials } = useGLTF('/models/settings-transformed.glb')
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -25,4 +25,4 @@ export default function SettingsModel(props) {
 	)
 }
 
-useGLTF.preload('/settings-transformed.glb')
+useGLTF.preload('/models/settings-transformed.glb')

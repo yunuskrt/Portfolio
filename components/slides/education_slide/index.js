@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Logo from '@utils/logo'
 import ProjectButton from '@components/project_button'
 import { TbCertificate } from 'react-icons/tb'
 import { FaBook, FaUniversity, FaGraduationCap } from 'react-icons/fa'
@@ -10,7 +11,7 @@ const EducationSlide = ({
 	field,
 	detail,
 	gradDate,
-	path,
+	logo,
 	date,
 	src,
 	href,
@@ -26,7 +27,7 @@ const EducationSlide = ({
 				<div className={styles.left}>
 					<div>
 						<div className={styles.iconContainer}>
-							<img src={path} alt={name} className={styles.icon} />
+							<Logo name={logo} />
 						</div>
 						<div className={styles.dateContainer}>
 							<div className={styles.date}>

@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function EmployeeModel(props) {
-	const { nodes, materials } = useGLTF('/employee-transformed.glb')
+	const { nodes, materials } = useGLTF('/models/employee-transformed.glb')
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -23,4 +23,4 @@ export default function EmployeeModel(props) {
 	)
 }
 
-useGLTF.preload('/employee-transformed.glb')
+useGLTF.preload('/models/employee-transformed.glb')

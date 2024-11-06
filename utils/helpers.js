@@ -68,3 +68,24 @@ export const sendMail = async (nameRef, emailRef, subjectRef, commentRef) => {
 	// Sending email to the server
 	console.log({ name, email, subject, comment })
 }
+
+// Object to draw company and school logos
+export const drawSvg = {
+	hidden: { pathLength: 0, opacity: 0 },
+	visible: (i) => {
+		const delay = 1 + i * 0.5
+		return {
+			pathLength: 1,
+			opacity: 1,
+			transition: {
+				pathLength: {
+					delay: delay,
+					type: 'spring',
+					duration: 0.1,
+					bounce: 0,
+				},
+				opacity: { delay: i * 0.3, duration: 3.0 },
+			},
+		}
+	},
+}

@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function FlagsModel(props) {
-	const { nodes, materials } = useGLTF('/flags-transformed.glb')
+	const { nodes, materials } = useGLTF('/models/flags-transformed.glb')
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -47,4 +47,4 @@ export default function FlagsModel(props) {
 	)
 }
 
-useGLTF.preload('/flags-transformed.glb')
+useGLTF.preload('/models/flags-transformed.glb')

@@ -1,11 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
+import Logo from '@utils/logo'
 import ProjectButton from '@components/project_button'
 import styles from './experience_slide.module.css'
 
 const ExperienceSlide = ({
 	name,
-	path,
+	logo,
 	date,
 	desc,
 	src,
@@ -22,7 +23,7 @@ const ExperienceSlide = ({
 				<div className={styles.left}>
 					<div>
 						<div className={styles.iconContainer}>
-							<img src={path} alt={name} className={styles.icon} />
+							<Logo name={logo} />
 						</div>
 						<div className={styles.dateContainer}>
 							<div className={styles.date}>
