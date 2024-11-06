@@ -53,7 +53,10 @@
     max-width: 80%;
     margin-left: 10px;
 }
-
+.projectBtn {
+    display: flex;
+    justify-content: flex-start;
+}
 @keyframes animate {
     to {
         transform: translateY(20px);

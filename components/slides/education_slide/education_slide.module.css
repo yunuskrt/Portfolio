@@ -71,7 +71,10 @@
         font-size: 16px;
     }
 }
-
+.projectBtn{
+    display: flex;
+    justify-content: flex-start;
+}
 @keyframes animate {
     to {
         transform: translateY(20px);

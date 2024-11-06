@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { sendMail, submitContactForm, clearContactForm } from '@utils/helpers'
 import styles from './contact_slide.module.css'
 
@@ -25,7 +26,17 @@ const ContactSlide = () => {
 	}
 	return (
 		<div className={styles.left}>
-			<form className={styles.contactForm} onSubmit={handleFormSubmit}>
+			<motion.form
+				className={styles.contactForm}
+				onSubmit={handleFormSubmit}
+				animate={{
+					scale: 1.05,
+					transition: {
+						duration: 1.5,
+						ease: 'easeInOut',
+					},
+				}}
+			>
 				<h1 className={styles.contactTitle}>Contact</h1>
 				<div className='form-group'>
 					<input
@@ -70,7 +81,7 @@ const ContactSlide = () => {
 				<button type='submit' className={styles.submitFormBtn}>
 					SEND
 				</button>
-			</form>
+			</motion.form>
 		</div>
 	)
 }

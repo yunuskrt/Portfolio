@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Logo from '@utils/logo'
 import ProjectButton from '@components/project_button'
@@ -30,12 +31,22 @@ const EducationSlide = ({
 							<Logo name={logo} />
 						</div>
 						<div className={styles.dateContainer}>
-							<div className={styles.date}>
+							<motion.div
+								className={styles.date}
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ delay: 0.5, duration: 2 }}
+							>
 								<span>{date}</span>
-							</div>
+							</motion.div>
 						</div>
 					</div>
-					<div className={styles.infoContainer}>
+					<motion.div
+						className={styles.infoContainer}
+						initial={{ x: '-100vw' }}
+						animate={{ x: 0 }}
+						transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+					>
 						<div className={styles.info}>
 							<FaUniversity /> <span>{name}</span>
 						</div>
@@ -48,15 +59,27 @@ const EducationSlide = ({
 						<div className={styles.info}>
 							<FaGraduationCap /> <span>{gradDate}</span>
 						</div>
-					</div>
+					</motion.div>
 
-					<ProjectButton
-						id='globe'
-						text='Visit Website'
-						href={href}
-						lightColor={lightColor}
-						darkColor={darkColor}
-					/>
+					<motion.div
+						className={styles.projectBtn}
+						initial={{ y: '100vh' }}
+						animate={{ y: -10 }}
+						transition={{
+							type: 'spring',
+							stiffness: 10,
+							damping: 5,
+							delay: 1,
+						}}
+					>
+						<ProjectButton
+							id='globe'
+							text='Visit Website'
+							href={href}
+							lightColor={lightColor}
+							darkColor={darkColor}
+						/>
+					</motion.div>
 				</div>
 				<div className={styles.right}>
 					<Image

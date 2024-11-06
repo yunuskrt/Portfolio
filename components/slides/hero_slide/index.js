@@ -23,7 +23,18 @@ const HeroSlide = () => {
 						<div className={styles.codeContainer}>
 							<span className={styles.lineNumber}>1</span>
 							<TypeAnimation
-								sequence={['I am a Software Engineer']}
+								sequence={[
+									'I am a Software Engineer',
+									3000,
+									'I am a Full Stack Developer',
+									3000,
+									'I am a Backend Developer',
+									2000,
+									'I am a Frontend Developer',
+									2000,
+									'I am a Mobile Developer',
+									1000,
+								]}
 								wrapper='p'
 								cursor={true}
 								repeat={1}
@@ -35,7 +46,6 @@ const HeroSlide = () => {
 								x: 25,
 								scale: 1.1,
 								transition: {
-									yoyo: Infinity,
 									duration: 5,
 									ease: 'backInOut',
 								},
@@ -72,6 +82,10 @@ const HeroSlide = () => {
 						className={styles.nonagonBorder}
 						animate={{
 							scale: 1.3,
+							transition: {
+								duration: 1,
+								ease: 'easeInOut',
+							},
 						}}
 					>
 						<div className={styles.nonagonImage}>
