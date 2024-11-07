@@ -26,7 +26,7 @@ const HeroSlide = () => {
 								sequence={[
 									'I am a Software Engineer',
 									3000,
-									'I am a Full Stack Developer',
+									'I am a Full-stack Developer',
 									3000,
 									'I am a Backend Developer',
 									2000,
@@ -37,7 +37,7 @@ const HeroSlide = () => {
 								]}
 								wrapper='p'
 								cursor={true}
-								repeat={1}
+								repeat={Infinity}
 							/>
 						</div>
 						<motion.div

@@ -133,7 +133,10 @@ const VerticalSlider = ({ id = '', autoPlay = true, children }) => {
 	return (
 		<div className={styles.background} ref={vantaRef}>
 			<Slider ref={sliderRef} {...settings}>
-				{children}
+				{/* {children} */}
+				{React.Children.map(children, (child) =>
+					React.cloneElement(child, { slideIndex })
+				)}
 			</Slider>
 		</div>
 	)

@@ -8,7 +8,6 @@ const Education = () => {
 			field: 'Science - Mathematics',
 			detail: 'Dalf C1',
 			gradDate: 'June 2019',
-			logo: 'saintePulcherie',
 			date: '2014 - 2019',
 			src: '/banners/eiffel.png',
 			href: 'https://www.sp.k12.tr',
@@ -20,7 +19,6 @@ const Education = () => {
 			field: 'Computer Science and Engineering',
 			detail: '3.13',
 			gradDate: 'June 2024',
-			logo: 'sabanciUniv',
 			date: '2019 - 2024',
 			src: '/banners/univ.png',
 			href: 'https://sabanciuniv.edu/tr',
@@ -31,7 +29,7 @@ const Education = () => {
 	return (
 		<VerticalSlider>
 			{educationData.map((data, index) => (
-				<EducationSlide key={index} {...data} />
+				<EducationSlide key={index} currentIndex={index} {...data} />
 			))}
 		</VerticalSlider>
 	)

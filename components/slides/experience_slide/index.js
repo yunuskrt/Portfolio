@@ -1,20 +1,44 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
-import Logo from '@utils/logo'
+import SabanciDx from '@logos/sabanci_dx'
+import Siemens from '@logos/siemens'
 import ProjectButton from '@components/project_button'
 import styles from './experience_slide.module.css'
 
 const ExperienceSlide = ({
 	name,
-	logo,
 	date,
 	desc,
 	src,
 	href,
 	lightColor,
 	darkColor,
+	currentIndex,
+	slideIndex,
 }) => {
+	const dateControls = useAnimation()
+	const infoControls = useAnimation()
+	const buttonControls = useAnimation()
+	useEffect(() => {
+		if (currentIndex === slideIndex) {
+			// Start animations when slide is active
+			dateControls.start({
+				opacity: 1,
+				transition: { delay: 0.5, duration: 2 },
+			})
+			infoControls.start('visible')
+			buttonControls.start({
+				y: -10,
+				transition: { type: 'spring', stiffness: 10, damping: 5, delay: 1 },
+			})
+		} else {
+			// Reset animations when slide is inactive
+			dateControls.start({ opacity: 0 })
+			infoControls.start('hidden')
+			buttonControls.start({ y: '100vh' })
+		}
+	}, [slideIndex])
 	return (
 		<div
 			className={styles.slide}
@@ -24,16 +48,11 @@ const ExperienceSlide = ({
 				<div className={styles.left}>
 					<div>
 						<div className={styles.iconContainer}>
-							<Logo name={logo} />
+							{slideIndex === 0 ? <SabanciDx /> : <Siemens />}
 						</div>
 						<div className={styles.dateContainer}>
 							<div className={styles.date}>
-								<motion.div
-									className={styles.date}
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									transition={{ delay: 0.5, duration: 2 }}
-								>
+								<motion.div className={styles.date} animate={dateControls}>
 									<span>{date}</span>
 								</motion.div>
 							</div>
@@ -41,11 +60,11 @@ const ExperienceSlide = ({
 					</div>
 					<motion.ul
 						initial='hidden'
-						animate='visible'
+						animate={infoControls}
 						variants={{
 							visible: {
 								transition: {
-									staggerChildren: 0.1, // Staggers each child by 0.1s
+									staggerChildren: 0.1,
 								},
 							},
 						}}
@@ -69,14 +88,8 @@ const ExperienceSlide = ({
 					</motion.ul>
 					<motion.div
 						className={styles.projectBtn}
+						animate={buttonControls}
 						initial={{ y: '100vh' }}
-						animate={{ y: -10 }}
-						transition={{
-							type: 'spring',
-							stiffness: 10,
-							damping: 5,
-							delay: 1,
-						}}
 					>
 						<ProjectButton
 							id='globe'

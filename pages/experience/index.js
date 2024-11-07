@@ -6,7 +6,6 @@ const Experience = () => {
 	const experienceData = [
 		{
 			name: 'SabanciDx',
-			logo: 'sabanciDx',
 			date: 'June 2020 - August 2020',
 			desc: 'Collaborated on a software project for a well-known Turkish energy company facilitating real-time tracking of their vehicle fleet status during service operations.\nImplemented CRUD operations for the project’s API using .NET.\nDesigned the user interface with Figma.',
 			src: '/banners/tech-overlay.png',
@@ -16,7 +15,6 @@ const Experience = () => {
 		},
 		{
 			name: 'Siemens',
-			logo: 'siemens',
 			date: 'October 2023 - May 2024',
 			desc: 'Collaborated on a large software project for a factory environment, consisting of multiple modules which digitalize the operations of departments.\nUsed PHP and MySQL for the back end, ensured the security of module interactions.\nImplemented data pipelines with Python that accelerates the flow of daily operations.\nUsed Semantic UI, HTML, CSS, and jQuery for the implementation of user interfaces.\nUsed Datadog to track the logs, errors and warnings of programs.',
 			src: '/banners/smart-city.png',
@@ -28,7 +26,7 @@ const Experience = () => {
 	return (
 		<VerticalSlider>
 			{experienceData.map((data, index) => (
-				<ExperienceSlide key={index} {...data} />
+				<ExperienceSlide key={index} currentIndex={index} {...data} />
 			))}
 		</VerticalSlider>
 	)

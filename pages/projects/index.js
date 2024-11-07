@@ -143,7 +143,7 @@ const Swiper = () => {
 	return (
 		<VerticalSlider id='projects'>
 			{projectsData.map((data, index) => (
-				<ProjectSlide key={index} {...data} />
+				<ProjectSlide key={index} currentIndex={index} {...data} />
 			))}
 		</VerticalSlider>
 	)
