@@ -65,19 +65,21 @@ const HeroSlide = () => {
 					</div>
 				</div>
 				<div className={styles.right}>
-					<Canvas camera={{ fov: 25, position: [5, 5, 5] }}>
-						<OrbitControls enableZoom={false} autoRotate />
-						<ambientLight intensity={3} />
-						<directionalLight position={[3, 2, 1]} />
-						<Sphere args={[1, 100, 200]} scale={1.4}>
-							<MeshDistortMaterial
-								color='#2d59c0'
-								attach='material'
-								distort={0.5}
-								speed={1}
-							/>
-						</Sphere>
-					</Canvas>
+					<div className={styles.profileBackground}>
+						<Canvas camera={{ fov: 25, position: [5, 5, 5] }}>
+							<OrbitControls enableZoom={false} autoRotate />
+							<ambientLight intensity={3} />
+							<directionalLight position={[3, 2, 1]} />
+							<Sphere args={[1, 100, 200]} scale={1.4}>
+								<MeshDistortMaterial
+									color='#2d59c0'
+									attach='material'
+									distort={0.5}
+									speed={1}
+								/>
+							</Sphere>
+						</Canvas>
+					</div>
 					<motion.div
 						className={styles.nonagonBorder}
 						animate={{
