@@ -1,8 +1,9 @@
 import React from 'react'
+import StairTransition from '@components/stair_transition'
 import VerticalSlider from '@layout/vertical_slider'
 import ProjectSlide from '@slides/project_slide'
 
-const Swiper = () => {
+const Projects = () => {
 	const projectsData = [
 		{
 			bgColor: '#d2ccaa4d',
@@ -141,12 +142,14 @@ const Swiper = () => {
 		},
 	]
 	return (
-		<VerticalSlider id='projects'>
-			{projectsData.map((data, index) => (
-				<ProjectSlide key={index} currentIndex={index} {...data} />
-			))}
-		</VerticalSlider>
+		<StairTransition>
+			<VerticalSlider id='projects'>
+				{projectsData.map((data, index) => (
+					<ProjectSlide key={index} currentIndex={index} {...data} />
+				))}
+			</VerticalSlider>
+		</StairTransition>
 	)
 }
 
-export default Swiper
+export default Projects

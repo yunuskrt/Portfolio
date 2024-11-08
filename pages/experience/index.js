@@ -1,4 +1,5 @@
 import React from 'react'
+import StairTransition from '@components/stair_transition'
 import VerticalSlider from '@layout/vertical_slider'
 import ExperienceSlide from '@slides/experience_slide'
 
@@ -24,11 +25,13 @@ const Experience = () => {
 		},
 	]
 	return (
-		<VerticalSlider>
-			{experienceData.map((data, index) => (
-				<ExperienceSlide key={index} currentIndex={index} {...data} />
-			))}
-		</VerticalSlider>
+		<StairTransition>
+			<VerticalSlider>
+				{experienceData.map((data, index) => (
+					<ExperienceSlide key={index} currentIndex={index} {...data} />
+				))}
+			</VerticalSlider>
+		</StairTransition>
 	)
 }
 

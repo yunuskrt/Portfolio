@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import StairTransition from '@components/stair_transition'
 import GLOBE from 'vanta/dist/vanta.globe.min'
 import * as THREE from 'three'
 import ContactSlide from '@slides/contact_slide'
@@ -32,9 +33,11 @@ const Contact = () => {
 	}, [vantaEffect])
 
 	return (
-		<div ref={vantaRef} className={styles.background}>
-			<ContactSlide />
-		</div>
+		<StairTransition>
+			<div ref={vantaRef} className={styles.background}>
+				<ContactSlide />
+			</div>
+		</StairTransition>
 	)
 }
 export default Contact

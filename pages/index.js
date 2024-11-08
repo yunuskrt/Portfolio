@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import StairTransition from '@components/stair_transition'
 import RINGS from 'vanta/dist/vanta.rings.min'
 import * as THREE from 'three'
 import HeroSlide from '@slides/hero_slide'
@@ -31,9 +32,11 @@ const Home = () => {
 		}
 	}, [vantaEffect])
 	return (
-		<div ref={vantaRef} className={styles.background}>
-			<HeroSlide />
-		</div>
+		<StairTransition>
+			<div ref={vantaRef} className={styles.background}>
+				<HeroSlide />
+			</div>
+		</StairTransition>
 	)
 }
 export default Home

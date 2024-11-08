@@ -1,6 +1,8 @@
 import React from 'react'
+import StairTransition from '@components/stair_transition'
 import VerticalSlider from '@layout/vertical_slider'
 import EducationSlide from '@slides/education_slide'
+
 const Education = () => {
 	const educationData = [
 		{
@@ -27,11 +29,13 @@ const Education = () => {
 		},
 	]
 	return (
-		<VerticalSlider>
-			{educationData.map((data, index) => (
-				<EducationSlide key={index} currentIndex={index} {...data} />
-			))}
-		</VerticalSlider>
+		<StairTransition>
+			<VerticalSlider>
+				{educationData.map((data, index) => (
+					<EducationSlide key={index} currentIndex={index} {...data} />
+				))}
+			</VerticalSlider>
+		</StairTransition>
 	)
 }
 export default Education
