@@ -1,0 +1,18 @@
+.gameContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    padding: 10px;
+}
+
+.notFoundText{
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #0a3833;
+}

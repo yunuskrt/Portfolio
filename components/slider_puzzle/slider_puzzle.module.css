@@ -1,0 +1,91 @@
+.game{
+    display: flex; 
+    gap: 50px;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+.boardContainer{
+    display: inline-block;
+    background-color: #0a3833;
+    border-radius: 5px;
+    padding: 5px;
+}
+.completeBorder{
+    border: 5px solid green;
+}
+.incompleteBorder{
+    border: 5px solid #93b2a5;
+}
+
+.row{
+    display: flex;
+}
+
+.tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    color: #fff;
+    font-size: 80px;
+    border-radius: 5px;
+    user-select: none;
+
+    @media screen and (max-width: 539px) {
+        width: 65px;
+        height: 65px;
+        font-size: 45px;
+    }
+}
+.empty{
+    background-color: transparent;
+}
+.correct{
+    background-color: #6f52b3;
+}
+.incorrect{
+    background-color: #3db1a6;
+}
+.notAllowed{
+    cursor: not-allowed;
+}
+.pointer{
+    cursor: pointer;
+}
+
+.number{
+    font-size: 50px; 
+    font-weight: bold;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 220px;
+    align-items: center;
+    padding: 10px;
+}
+.infoRow{
+    display: flex;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #0a3833;
+}
+
+.btn{
+    width: 100%;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
