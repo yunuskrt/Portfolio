@@ -1,0 +1,72 @@
+.container{
+    min-height: 55vh;
+    width: 100%;
+    display: flex;
+    background-color: var(--light);
+}
+.left{
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.projectButtons {
+    display: flex;
+    gap: 10px;
+
+    @media screen and (max-width: 911px) {
+        gap: 5px;
+    }
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectTitle {
+    font-weight: 900;
+    color: var(--dark);
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    overflow: hidden;
+    font-size: 40px;
+}
+
+.quoteWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--dark);
+}
+
+.quoteBorder{
+    width: 75%;
+    height: 5px;
+    border-radius: 5px;
+    width: 0;
+    background-color: var(--dark);
+    opacity: 0.8;
+    animation: growWidth 2s forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes growWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 75%;
+    }
+}
+.quoteText {
+    position: relative;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0;
+    max-height: 60%;
+}
