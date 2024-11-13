@@ -18,6 +18,9 @@
     background-color: var(--dark);
     opacity: 0.5;
     cursor: pointer;
+    @media screen and (max-width: 768px) {
+        width: 25px;
+    }
 }
 .active {
     opacity: 1;
@@ -29,26 +32,45 @@
     display: flex;
     background-color: var(--light);
     padding: 20px;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 .left{
     flex: 1;
     width: 50%;
     padding: 10px;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+    }
 }
 .right{
     flex: 1;
+    @media screen and (max-width: 768px) {
+        padding: 30px 10px;
+    }
+    
 }
 .img {
     margin: 0 auto;
     height: 350px;
     width: var(--image-width);
     border-radius: 2px;
+    @media screen and (max-width: 768px) {
+        height: 200px;
+        width: calc(var(--image-width) - 100px);
+    }
 }
 .pageTitle {
     font-size: 30px;
     padding: 20px;
     font-size: 32px;
     color: var(--dark);
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 .projectInfoList {
@@ -62,4 +84,7 @@
     margin-top: 10px;
     color: var(--dark);
     max-width: 80%;
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
 }

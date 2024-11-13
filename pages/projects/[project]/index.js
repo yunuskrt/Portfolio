@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
-import ProjectInfoSlide from '@components/slides/project_info_slide'
+import React from 'react'
+import ProjectInfoSlide from '@slides/project_info_slide'
+import StairTransition from '@components/stair_transition'
 import {
 	DiplomaticInteractions,
 	Lineup,
@@ -9,9 +10,6 @@ import {
 } from './data'
 
 const Project = ({ project }) => {
-	useEffect(() => {
-		console.log({ project })
-	}, [])
 	let projectData = {
 		'diplomatic-interactions': DiplomaticInteractions,
 		lineup: Lineup,
@@ -20,7 +18,11 @@ const Project = ({ project }) => {
 		'setting-configurator': SettingConfigurator,
 	}
 	let projectInfo = projectData[project]
-	return <ProjectInfoSlide {...projectInfo} />
+	return (
+		<StairTransition>
+			<ProjectInfoSlide {...projectInfo} />
+		</StairTransition>
+	)
 }
 
 export async function getServerSideProps(context) {

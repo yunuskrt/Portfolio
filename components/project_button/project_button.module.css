@@ -67,3 +67,17 @@
     font-size: 12px; 
     font-weight: 500;
 }
+
+@media screen and (max-width: 540px) {
+    .content{
+        font-size: 12px;
+    }
+    .hvrIconPulseGrow {
+        height: 40px;
+        padding: 5px;
+    }
+    .detailText{
+        font-size: 10px; 
+    }
+    
+}
