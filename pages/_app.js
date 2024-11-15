@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import Layout from '@components/layout'
 import { AnimatePresence } from 'framer-motion'
 import '../public/globals.css'
@@ -6,11 +7,26 @@ import 'slick-carousel/slick/slick-theme.css'
 
 function MyApp({ Component, pageProps, router }) {
 	return (
-		<Layout>
-			<AnimatePresence mode='wait'>
-				<Component key={router.route} {...pageProps} />
-			</AnimatePresence>
-		</Layout>
+		<>
+			<Script
+				strategy='afterInteractive'
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+			/>
+			<Script id='google-analytics' strategy='afterInteractive'>
+				{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+    `}
+			</Script>
+
+			<Layout>
+				<AnimatePresence mode='wait'>
+					<Component key={router.route} {...pageProps} />
+				</AnimatePresence>
+			</Layout>
+		</>
 	)
 }
 
