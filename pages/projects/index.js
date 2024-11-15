@@ -11,7 +11,7 @@ const Projects = () => {
 			identifier: '01',
 			title: 'DIPLOMATIC INTERACTIONS',
 			description:
-				'Frontend application that visualizes the data of interactions among countries built with NextJS.\nOffers many dynamic visualization types such as tables, networks, cartography, bar chart.',
+				'Developed the front end of a web app visualizing country relationships via cartography, tables, and heatmaps.\nBuilt with Next.js & Typescript, and Semantic UI React.',
 			buttons: [
 				{
 					id: 'eye',
@@ -35,7 +35,7 @@ const Projects = () => {
 			identifier: '02',
 			title: 'LINEUP',
 			description:
-				'Soccer squad guessing game using Flutter.\nWeb scraper and ETL pipeline that fetches match, player, team, and manager data from Transfermarkt, processes it, and stores it in MongoDB.\nREST API for a squad guessing game, managing soccer data with MongoDB.',
+				'Soccer squad guessing game using interconnected CS components.\nPython web scraper and ETL tool to collect and process soccer data from Transfermarkt into MongoDB.\nNestJS REST API for dynamic data filtering (league, season, round, country).\nFlutter mobile app for guessing squads, using FutureBuilder and Provider for state management.',
 			buttons: [
 				{
 					id: 'eye',
@@ -74,7 +74,7 @@ const Projects = () => {
 			identifier: '03',
 			title: 'EMPLOYEE MANAGEMENT DASHBOARD',
 			description:
-				'Full stack dashboard web app.\nUsed Semantic UI, HTML, CSS, jQuery for the front-end, MySQL database and PHP backend.',
+				'Developed a full-stack dashboard for project and employee tracking in corporate environments.\nUtilized Semantic UI, jQuery, AJAX, DataTables, and Highcharts for the front end, and PHP with MySQL for the back end.',
 			buttons: [
 				{
 					id: 'eye',
@@ -98,7 +98,7 @@ const Projects = () => {
 			identifier: '04',
 			title: 'BIRTHDAY TRACKER',
 			description:
-				'A web application to track the birthdays of your friends.\nBuilt with NestJS and NextJS.',
+				'Full-stack web application to track the birthdays of your friends.\nBuilt with NestJS and NextJS.',
 			buttons: [
 				{
 					id: 'eye',
@@ -122,7 +122,7 @@ const Projects = () => {
 			identifier: '05',
 			title: 'SETTING CONFIGURATOR',
 			description:
-				'Full Stack Web App that serves the configurations for mobile apps.',
+				'Full Stack Web App that serves the configurations for mobile apps.\nBuilt with Node.js, Vue.js, and Firebase.',
 			buttons: [
 				{
 					id: 'eye',

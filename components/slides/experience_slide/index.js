@@ -12,6 +12,10 @@ const ExperienceSlide = ({
 	desc,
 	src,
 	href,
+	role,
+	context,
+	type,
+	location,
 	lightColor,
 	darkColor,
 	currentIndex,
@@ -86,6 +90,68 @@ const ExperienceSlide = ({
 								</motion.li>
 							))}
 					</motion.ul>
+					<motion.div
+						className={styles.roleInfoContainer}
+						initial='hidden'
+						animate={infoControls}
+						variants={{
+							visible: {
+								transition: {
+									staggerChildren: 0.1,
+								},
+							},
+							hidden: {},
+						}}
+					>
+						<motion.div
+							className={styles.roleInfo}
+							variants={{
+								hidden: { opacity: 0, x: -20 },
+								visible: { opacity: 1, x: 0 },
+							}}
+							transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+						>
+							<span className={styles.roleInfoTitle}>ROLE</span>
+							<span className={styles.roleInfoDesc}>{role}</span>
+						</motion.div>
+
+						<motion.div
+							className={styles.roleInfo}
+							variants={{
+								hidden: { opacity: 0, x: -20 },
+								visible: { opacity: 1, x: 0 },
+							}}
+							transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+						>
+							<span className={styles.roleInfoTitle}>CONTEXT</span>
+							<span className={styles.roleInfoDesc}>{context}</span>
+						</motion.div>
+
+						<motion.div
+							className={styles.roleInfo}
+							variants={{
+								hidden: { opacity: 0, x: -20 },
+								visible: { opacity: 1, x: 0 },
+							}}
+							transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+						>
+							<span className={styles.roleInfoTitle}>TYPE</span>
+							<span className={styles.roleInfoDesc}>{type}</span>
+						</motion.div>
+
+						<motion.div
+							className={styles.roleInfo}
+							variants={{
+								hidden: { opacity: 0, x: -20 },
+								visible: { opacity: 1, x: 0 },
+							}}
+							transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+						>
+							<span className={styles.roleInfoTitle}>LOCATION</span>
+							<span className={styles.roleInfoDesc}>{location}</span>
+						</motion.div>
+					</motion.div>
+
 					<motion.div
 						className={styles.projectBtn}
 						animate={buttonControls}

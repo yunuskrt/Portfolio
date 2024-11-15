@@ -10,17 +10,23 @@ import {
 } from './data'
 
 const Project = ({ project }) => {
-	let projectData = {
-		'diplomatic-interactions': DiplomaticInteractions,
-		lineup: Lineup,
-		'employee-management-dashboard': EmployeeManagementDashboard,
-		'birthday-tracker': BirthdayTracker,
-		'setting-configurator': SettingConfigurator,
+	const projectData = {
+		'diplomatic-interactions': {
+			data: DiplomaticInteractions,
+			color: '#534c44',
+		},
+		lineup: { data: Lineup, color: '#343d36' },
+		'employee-management-dashboard': {
+			data: EmployeeManagementDashboard,
+			color: '#4a2e42',
+		},
+		'birthday-tracker': { data: BirthdayTracker, color: '#11284a' },
+		'setting-configurator': { data: SettingConfigurator, color: '#3d3228' },
 	}
 	let projectInfo = projectData[project]
 	return (
-		<StairTransition>
-			<ProjectInfoSlide {...projectInfo} />
+		<StairTransition bgColor={projectInfo.color}>
+			<ProjectInfoSlide {...projectInfo.data} />
 		</StairTransition>
 	)
 }

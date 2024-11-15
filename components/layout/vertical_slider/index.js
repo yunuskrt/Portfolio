@@ -110,7 +110,7 @@ const VerticalSlider = ({ id = '', autoPlay = true, children }) => {
 	const debounceTimeout = useRef(null)
 	useEffect(() => {
 		const handleWheel = (event) => {
-			if (Math.abs(event.deltaY) >= 100) {
+			if (Math.abs(event.deltaY) >= 30) {
 				clearTimeout(debounceTimeout.current)
 				debounceTimeout.current = setTimeout(() => {
 					if (event.deltaY > 0) {
