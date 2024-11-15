@@ -1,0 +1,70 @@
+.toast {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 15px 20px;
+    background-color: #dedede;
+    color: #000;
+    min-width: 100px;
+    max-width: 350px;
+    overflow-x: scroll;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateZ(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 800px;
+}
+
+.toast:hover {
+    transform: rotateX(-8deg) rotateY(8deg) translateZ(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.loader {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #2d59c0;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.iconBg{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 26px;
+}
+
+.success {
+    background-color: #e8fde8;
+}
+.success svg {
+    color: #69d459;
+}
+
+.danger{
+    background-color: #fde8e8;
+}
+.danger svg {
+    color: #d45959;
+}

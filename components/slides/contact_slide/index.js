@@ -1,6 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { sendMail, submitContactForm, clearContactForm } from '@utils/helpers'
+import Toast from '@components/toast'
 import styles from './contact_slide.module.css'
 
 const ContactSlide = () => {
@@ -9,8 +10,17 @@ const ContactSlide = () => {
 	const subjectRef = useRef(null)
 	const commentRef = useRef(null)
 
-	const handleFormSubmit = (e) => {
+	const [showToast, setShowToast] = useState(false)
+	const [disableBtn, setDisableBtn] = useState(false)
+	const [toast, setToast] = useState({ loading: true, status: '', message: '' })
+
+	const handleFormSubmit = async (e) => {
 		e.preventDefault()
+
+		setDisableBtn(true)
+		setShowToast(true)
+
+		// Form validation and frontend error handling
 		const validForm = submitContactForm(
 			nameRef,
 			emailRef,
@@ -18,11 +28,30 @@ const ContactSlide = () => {
 			commentRef
 		)
 		if (validForm) {
-			sendMail(nameRef, emailRef, subjectRef, commentRef)
+			const mailResult = await sendMail(
+				nameRef,
+				emailRef,
+				subjectRef,
+				commentRef
+			)
+			if (mailResult) {
+				alertToast('success', 'Email sent')
+			} else {
+				alertToast('error', 'An error occured')
+			}
 			clearContactForm(nameRef, emailRef, subjectRef, commentRef)
 		} else {
-			console.log('form is not valid')
+			alertToast('error', 'Form is not valid')
 		}
+		setDisableBtn(false)
+	}
+
+	const alertToast = (status, message) => {
+		setToast({ loading: false, status, message })
+		setTimeout(() => {
+			setToast({ loading: true, status: '', message: '' })
+			setShowToast(false)
+		}, 4000)
 	}
 	return (
 		<div className={styles.left}>
@@ -78,10 +107,17 @@ const ContactSlide = () => {
 						autoComplete='off'
 					></textarea>
 				</div>
-				<button type='submit' className={styles.submitFormBtn}>
+				<button
+					type='submit'
+					className={`${styles.submitFormBtn} ${
+						disableBtn ? styles.disabledBtn : ''
+					}`}
+					disabled={disableBtn}
+				>
 					SEND
 				</button>
 			</motion.form>
+			{showToast ? <Toast {...toast} /> : null}
 		</div>
 	)
 }

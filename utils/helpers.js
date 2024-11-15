@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // Function to display error messages of form fields
 const showError = (field, errorText) => {
 	field.current.classList.add('error')
@@ -47,9 +49,6 @@ export const submitContactForm = (
 		validForm = false
 	}
 	return validForm
-	// Checking for any remaining errors before form submission
-	// const errorInputs = document.querySelectorAll('.form-group .error')
-	// if (errorInputs.length > 0) return
 }
 
 export const clearContactForm = (nameRef, emailRef, subjectRef, commentRef) => {
@@ -65,8 +64,18 @@ export const sendMail = async (nameRef, emailRef, subjectRef, commentRef) => {
 	const email = emailRef.current.value.trim()
 	const subject = subjectRef.current.value.trim()
 	const comment = commentRef.current.value.trim()
-	// Sending email to the server
-	console.log({ name, email, subject, comment })
+
+	try {
+		const response = await axios.post('/api/v1/send-mail', {
+			name,
+			email,
+			subject,
+			comment,
+		})
+		return response.status === 200
+	} catch (error) {
+		return false
+	}
 }
 
 // Object to draw company and school logos
