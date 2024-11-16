@@ -4,6 +4,7 @@ import GLOBE from 'vanta/dist/vanta.globe.min'
 import * as THREE from 'three'
 import ContactSlide from '@slides/contact_slide'
 import styles from './contact.module.css'
+import Head from 'next/head'
 
 const Contact = () => {
 	const [vantaEffect, setVantaEffect] = useState(0)
@@ -33,11 +34,16 @@ const Contact = () => {
 	}, [vantaEffect])
 
 	return (
-		<StairTransition>
-			<div ref={vantaRef} className={styles.background}>
-				<ContactSlide />
-			</div>
-		</StairTransition>
+		<>
+			<Head>
+				<title>Contact</title>
+			</Head>
+			<StairTransition>
+				<div ref={vantaRef} className={styles.background}>
+					<ContactSlide />
+				</div>
+			</StairTransition>
+		</>
 	)
 }
 export default Contact

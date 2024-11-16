@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import StairTransition from '@components/stair_transition'
 import VerticalSlider from '@layout/vertical_slider'
 import ProjectSlide from '@slides/project_slide'
@@ -142,13 +143,18 @@ const Projects = () => {
 		},
 	]
 	return (
-		<StairTransition>
-			<VerticalSlider id='projects'>
-				{projectsData.map((data, index) => (
-					<ProjectSlide key={index} currentIndex={index} {...data} />
-				))}
-			</VerticalSlider>
-		</StairTransition>
+		<>
+			<Head>
+				<title>Projects</title>
+			</Head>
+			<StairTransition>
+				<VerticalSlider id='projects'>
+					{projectsData.map((data, index) => (
+						<ProjectSlide key={index} currentIndex={index} {...data} />
+					))}
+				</VerticalSlider>
+			</StairTransition>
+		</>
 	)
 }
 

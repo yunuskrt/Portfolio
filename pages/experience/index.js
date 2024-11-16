@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import StairTransition from '@components/stair_transition'
 import VerticalSlider from '@layout/vertical_slider'
 import ExperienceSlide from '@slides/experience_slide'
@@ -33,13 +34,18 @@ const Experience = () => {
 		},
 	]
 	return (
-		<StairTransition>
-			<VerticalSlider>
-				{experienceData.map((data, index) => (
-					<ExperienceSlide key={index} currentIndex={index} {...data} />
-				))}
-			</VerticalSlider>
-		</StairTransition>
+		<>
+			<Head>
+				<title>Experience</title>
+			</Head>
+			<StairTransition>
+				<VerticalSlider>
+					{experienceData.map((data, index) => (
+						<ExperienceSlide key={index} currentIndex={index} {...data} />
+					))}
+				</VerticalSlider>
+			</StairTransition>
+		</>
 	)
 }
 
