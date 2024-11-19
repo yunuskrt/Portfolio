@@ -8,7 +8,7 @@ const ProjectInfoSlide = ({
 	darkColor,
 	title,
 	description,
-	modelName,
+	animName,
 	buttons,
 	icons,
 	imageWidth = '500px',
@@ -21,7 +21,7 @@ const ProjectInfoSlide = ({
 				darkColor={darkColor}
 				title={title}
 				description={description}
-				modelName={modelName}
+				animName={animName}
 				buttons={buttons}
 			/>
 			<Technologies

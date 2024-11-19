@@ -8,7 +8,7 @@ const Projects = () => {
 	const projectsData = [
 		{
 			bgColor: '#d2ccaa4d',
-			modelName: 'flags',
+			animName: 'world',
 			identifier: '01',
 			title: 'DIPLOMATIC INTERACTIONS',
 			description:
@@ -32,7 +32,7 @@ const Projects = () => {
 		},
 		{
 			bgColor: '#89e2854d',
-			modelName: 'stadium',
+			animName: 'lineup',
 			identifier: '02',
 			title: 'LINEUP',
 			description:
@@ -71,7 +71,7 @@ const Projects = () => {
 		},
 		{
 			bgColor: '#ecd7d74d',
-			modelName: 'employee',
+			animName: 'employee',
 			identifier: '03',
 			title: 'EMPLOYEE MANAGEMENT DASHBOARD',
 			description:
@@ -95,7 +95,7 @@ const Projects = () => {
 		},
 		{
 			bgColor: '#00d4ff4d',
-			modelName: 'cake',
+			animName: 'birthday',
 			identifier: '04',
 			title: 'BIRTHDAY TRACKER',
 			description:
@@ -119,7 +119,7 @@ const Projects = () => {
 		},
 		{
 			bgColor: '#ffc8864d',
-			modelName: 'settings',
+			animName: 'setting',
 			identifier: '05',
 			title: 'SETTING CONFIGURATOR',
 			description:

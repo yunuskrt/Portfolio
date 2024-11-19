@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import Model from '@utils/model'
+import Animation from '@utils/animation'
 import ProjectButton from '@components/project_button'
 
 import styles from './project_header.module.css'
@@ -9,7 +9,7 @@ import styles from './project_header.module.css'
 const ProjectHeader = ({
 	lightColor,
 	darkColor,
-	modelName,
+	animName,
 	title,
 	description,
 	buttons,
@@ -61,7 +61,7 @@ const ProjectHeader = ({
 				</motion.div>
 			</div>
 			<div className={styles.right}>
-				<Model name={modelName} />
+				<Animation name={animName} />
 			</div>
 		</div>
 	)

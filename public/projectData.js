@@ -2,7 +2,7 @@ export const DiplomaticInteractions = {
 	lightColor: '#96897b',
 	darkColor: '#534c44',
 	title: 'DIPLOMATIC INTERACTIONS',
-	modelName: 'flags',
+	animName: 'world',
 	description: 'Global Interactions Through Dynamic Visuals',
 	icons: [
 		{ src: '/logos/nextjs.png', text: 'Next.js' },
@@ -72,7 +72,7 @@ export const Lineup = {
 	lightColor: '#6c8070',
 	darkColor: '#343d36',
 	title: 'LINEUP',
-	modelName: 'stadium',
+	animName: 'lineup',
 	description: 'Soccer Squad Guessing Game',
 	icons: [
 		{ src: '/logos/flutter.png', text: 'Flutter' },
@@ -175,7 +175,7 @@ export const EmployeeManagementDashboard = {
 	lightColor: '#8f6b84',
 	darkColor: '#4a2e42',
 	title: 'EMPLOYEE MANAGEMENT DASHBOARD',
-	modelName: 'employee',
+	animName: 'employee',
 	description: 'Project and Team Tracking for Corporate Workflows',
 	icons: [
 		{ src: '/logos/semantic_ui.png', text: 'Semantic UI' },
@@ -240,7 +240,7 @@ export const BirthdayTracker = {
 	lightColor: '#2d61ad',
 	darkColor: '#11284a',
 	title: 'BIRTHDAY TRACKER',
-	modelName: 'cake',
+	animName: 'birthday',
 	description:
 		"A Simple App to Track and Categorize Your Friends' and Family's Birthdays",
 	icons: [
@@ -282,7 +282,7 @@ export const SettingConfigurator = {
 	lightColor: '#87715f',
 	darkColor: '#3d3228',
 	title: 'SETTING CONFIGURATOR',
-	modelName: 'settings',
+	animName: 'setting',
 	description:
 		'Full Stack Web App that serves the configurations for mobile apps.',
 	icons: [

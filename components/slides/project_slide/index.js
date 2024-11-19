@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import Model from '@utils/model'
+import Animation from '@utils/animation'
 import ProjectButton from '@components/project_button'
 import styles from './project_slide.module.css'
 
 const ProjectSlide = ({
 	bgColor,
-	modelName,
+	animName,
 	lightColor,
 	darkColor,
 	identifier,
@@ -38,7 +38,7 @@ const ProjectSlide = ({
 		<section className={styles.slide} style={{ '--background-color': bgColor }}>
 			<div className={styles.content}>
 				<div className={styles.left}>
-					<Model name={modelName} />
+					<Animation name={animName} />
 				</div>
 				<div className={styles.right}>
 					<div

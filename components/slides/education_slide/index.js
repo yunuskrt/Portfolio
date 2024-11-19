@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
-import Image from 'next/image'
 import SabanciUniv from '@logos/sabanci_univ'
 import SaintePulcherie from '@logos/sainte_pulcherie'
+import Animation from '@utils/animation'
 import ProjectButton from '@components/project_button'
 import { TbCertificate } from 'react-icons/tb'
 import { FaBook, FaUniversity, FaGraduationCap } from 'react-icons/fa'
@@ -14,10 +14,11 @@ const EducationSlide = ({
 	detail,
 	gradDate,
 	date,
-	src,
+	animName,
 	href,
 	lightColor,
 	darkColor,
+	size = 90,
 	currentIndex,
 	slideIndex,
 }) => {
@@ -52,7 +53,7 @@ const EducationSlide = ({
 	return (
 		<div
 			className={styles.slide}
-			style={{ '--light': lightColor, '--dark': darkColor }}
+			style={{ '--light': lightColor, '--dark': darkColor, '--size': size }}
 		>
 			<div className={styles.content}>
 				<div className={styles.left}>
@@ -103,13 +104,9 @@ const EducationSlide = ({
 					</motion.div>
 				</div>
 				<div className={styles.right}>
-					<Image
-						className={styles.image}
-						src={src}
-						alt={name}
-						width={600}
-						height={450}
-					/>
+					<div className={styles.animContainer}>
+						<Animation name={animName} />
+					</div>
 				</div>
 			</div>
 		</div>

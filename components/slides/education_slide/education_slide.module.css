@@ -93,15 +93,19 @@
 .right {
     flex: 1;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     @media screen and (max-width: 911px) {
         display: none;
     }
 }
 
-.image {
-    width: 600px;
-    height: 450px;
-    object-fit: contain;
+.animContainer {
+    width: calc(var(--size) * 4px);
+    height: calc(var(--size) * 3px);
+    object-fit: cover;
     position: absolute;
     top: 0;
     bottom: 0;
