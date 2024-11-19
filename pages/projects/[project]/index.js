@@ -8,7 +8,7 @@ import {
 	EmployeeManagementDashboard,
 	BirthdayTracker,
 	SettingConfigurator,
-} from './data'
+} from '@/public/projectData'
 
 const Project = ({ project }) => {
 	const projectData = {
@@ -38,7 +38,7 @@ const Project = ({ project }) => {
 	return (
 		<>
 			<Head>
-				<title>Project | {projectInfo.title}</title>
+				<title>{`Project | ${projectInfo.title}`}</title>
 			</Head>
 			<StairTransition bgColor={projectInfo.color}>
 				<ProjectInfoSlide {...projectInfo.data} />
