@@ -17,7 +17,6 @@ const SaintePulcherie = () => {
 				fill='#000000'
 				stroke='none'
 			>
-				{/* bottom-base */}
 				<motion.path
 					d='M456 520 c-28 -34 -33 -59 -15 -77 7 -7 13 -26 14 -43 2 -25 0 -28
         -11 -19 -11 9 -14 6 -14 -15 0 -14 4 -26 9 -26 7 0 41 -70 41 -85 0 -3 -9 0
@@ -53,7 +52,7 @@ const SaintePulcherie = () => {
 					variants={drawSvg}
 					custom={0.5}
 				/>
-				{/* bottom-left */}
+
 				<motion.path
 					d='M26 478 c-20 -27 -23 -79 -4 -60 7 7 26 12 44 12 44 0 63 24 39 50
         -24 26 -60 25 -79 -2z'
@@ -165,7 +164,7 @@ const SaintePulcherie = () => {
 					variants={drawSvg}
 					custom={0.8}
 				/>
-				{/* top-left */}
+
 				<motion.path
 					d='M278 986 c-38 -7 -81 -22 -97 -34 -41 -30 -46 -28 -21 8 18 25 19 30
         6 30 -9 0 -16 -4 -16 -8 0 -4 -16 -32 -35 -62 -34 -53 -43 -98 -17 -93 21 5
@@ -274,7 +273,7 @@ const SaintePulcherie = () => {
 					variants={drawSvg}
 					custom={1.2}
 				/>
-				{/* top-right */}
+
 				<motion.path
 					d='M685 990 c4 -6 -4 -10 -18 -10 -14 0 -30 -7 -37 -15 -15 -18 -16 -17
         30 -33 28 -10 37 -9 49 3 12 12 12 16 0 31 -13 16 -11 17 20 11 18 -4 38 -7
@@ -394,7 +393,7 @@ const SaintePulcherie = () => {
 					variants={drawSvg}
 					custom={1.5}
 				/>
-				{/* bottom-right */}
+
 				<motion.path
 					d='M548 508 c-3 -29 1 -47 12 -58 15 -16 21 -112 7 -126 -4 -4 -7 2 -7
         14 0 12 -4 22 -10 22 -17 0 -11 -47 7 -54 28 -11 36 10 39 111 2 78 -1 101
