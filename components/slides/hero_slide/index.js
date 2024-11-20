@@ -79,6 +79,7 @@ const HeroSlide = () => {
 								alt='Profile Photo'
 								width={400}
 								height={400}
+								priority
 							/>
 						</div>
 					</motion.div>

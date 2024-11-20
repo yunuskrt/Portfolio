@@ -37,6 +37,8 @@
     @media screen and (max-width: 911px) {
         padding-left: 40px;
         padding: 0;
+        /* justify-content: space-between;
+        background-color: yellow; */
     }
 }
 
@@ -48,6 +50,9 @@
     gap: 25px;
     height: 65%;
     @media screen and (max-height: 600px) {
+        height: 100%;
+    }
+    @media screen and (max-width: 767px) {
         height: 90%;
     }
 }
@@ -126,6 +131,10 @@
     color: var(--dark);
     max-width: 80%;
     @media screen and (max-width: 540px) {
+        font-size: 14px;
+        line-height: 2em;
+    }
+    @media screen and (max-height: 600px) {
         font-size: 14px;
         line-height: 2em;
     }

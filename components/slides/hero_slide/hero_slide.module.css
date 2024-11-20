@@ -65,7 +65,7 @@
     user-select: none;
 }
 .codeContainer p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-family: 'Courier New', Courier, monospace;
     color: #007acc;
     padding: 5px 10px;
@@ -73,7 +73,7 @@
     border: 1px solid #e0e0e0;
     display: inline-block;
     @media screen and (max-width: 768px) {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -109,13 +109,13 @@
     overflow: hidden;
     position: absolute;
     @media screen and (max-width: 767px) and (max-height: 1024px)  {
-        width: 195px;
-        height: 195px;
+        width: 190px;
+        height: 190px;
         margin-bottom: 20px;
     }
     @media screen and (max-width: 1024px) {
-        width: 250px;
-        height: 250px;
+        width: 230px;
+        height: 230px;
     }
 }
 .nonagonImage {
@@ -123,12 +123,12 @@
     height: 350px;
     clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
     @media screen and (max-width: 767px) and (max-height: 1024px){
-        width: 190px;
-        height: 190px;
+        width: 185px;
+        height: 185px;
     }
     @media screen and (max-width: 1024px) {
-        width: 240px;
-        height: 240px;
+        width: 220px;
+        height: 220px;
     }
 }
 

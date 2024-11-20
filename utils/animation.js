@@ -22,7 +22,6 @@ const animations = {
 
 const Animation = ({ name }) => {
 	const animationData = animations[name]
-	console.log({ animationData })
 
 	return animationData ? (
 		<Lottie animationData={animationData} loop={true} />

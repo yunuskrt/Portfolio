@@ -173,6 +173,7 @@ const ExperienceSlide = ({
 						alt={name}
 						width={400}
 						height={400}
+						priority
 					/>
 				</div>
 			</div>
